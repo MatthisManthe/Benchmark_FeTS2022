@@ -1,0 +1,45 @@
+{
+    "device": "cuda:0",
+    "tranform_device": "cuda:0",
+    
+    "data_dir": "../datasets/MICCAI_FeTS2022_TrainingData",
+    "partition_file": "../datasets/MICCAI_FeTS2022_TrainingData/partitioning_1_folds/partitioning_1_train_fold_0.csv",
+    "cache_dir": "../cache_dir",
+    "log_dir": "../runs",
+    "log_filename": null,
+    "model_dir": "/gpfswork/rech/geh/uzq69ur/phd-first-centralized-trainings/source/grid_searches/IABM_Journal_benchmark_03_2023/fedavg_fold_0_e1_weighted/runs/Train_FedAvg_3D_multi_gpu.py/grid/2023-03-17_16-05-36",
+    "model_file": "best_global_model.pth",
+    "persistent_dataset": false,
+    
+    "prop_full_dataset": 0.05,
+    "ratio_train": 0.8,
+    
+    "max_local_epochs": 2,
+    "nb_gpus": 2,
+    "batch_size_per_gpu": 2,
+    
+    "filters": [32, 64, 128, 256, 512],
+    "strides": [1, 2, 2, 2, 2],
+    "kernel_sizes": [3, 3, 3, 3, 3],
+    
+    "optim":"sgd",
+    "learning_rate": 0.1,
+    "weight_decay": 1e-5,
+    "momentum_restart": true,
+    
+    "lambda": 0.1,
+    
+    "norm": "INSTANCE",
+    "learn_affine_norm": false,
+    
+    "data_augmentation": true,
+    
+    "global_validation_interval": 1,
+    "local_validation_interval": 1,
+    
+    "global_print_validation_interval": 20,
+    "local_print_validation_interval": 200,
+    
+    "roi_size": [128, 128, 128],
+    "sliding_window_overlap": 0.5
+}

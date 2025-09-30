@@ -1,0 +1,30 @@
+{
+    "device": "cuda:0",
+    
+    "data_dir": "../../datasets/MICCAI_FeTS2022_TrainingData",
+    "fold_0_dir": "/gpfswork/rech/geh/uzq69ur/phd-first-centralized-trainings/source/grid_searches/IABM_Journal_benchmark_03_2023/reviews_04_2024/fedavg_other_folds_e1_weighted_continue/runs/Train_FedAvg_3D_multi_gpu.py/grid/fold_0",
+    "test_0": true,
+    "folds_dir": "/gpfswork/rech/geh/uzq69ur/phd-first-centralized-trainings/source/grid_searches/IABM_Journal_benchmark_03_2023/reviews_04_2024/fedavg_other_folds_e1_weighted_continue/runs/Train_FedAvg_3D_multi_gpu.py/grid/fold_#",
+    "model_file": "best_global_model.pth",
+    "partition_file": "../../datasets/MICCAI_FeTS2022_TrainingData/partitioning_1_folds/partitioning_1_test_fold_#.csv",
+    "cache_dir": "../../cache_dir",
+    "persistent_dataset": false,
+    
+    "test_folds": true,
+    "folds": [1, 2, 3, 4],
+    "final_metrics_all_folds": true,
+    
+    "prop_full_dataset": 1.0,
+    "nb_min_test_samples": 0,
+    
+    "multi_gpu": true,
+    "nb_gpus": 2,
+    "batch_size_per_gpu": 2,
+    
+    "filters": [32, 64, 128, 256, 512],
+    "strides": [1, 2, 2, 2, 2],
+    "kernel_sizes": [3, 3, 3, 3, 3],
+    
+    "roi_size": [128, 128, 128],
+    "sliding_window_overlap": 0.5
+}

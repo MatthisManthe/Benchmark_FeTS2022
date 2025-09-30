@@ -1,0 +1,49 @@
+{
+    "device": "cuda:0",
+    "tranform_device": "cuda:0",
+    
+    "data_dir": "../datasets/MICCAI_FeTS2022_TrainingData",
+    "partition_file": "../datasets/MICCAI_FeTS2022_TrainingData/partitioning_1_folds/partitioning_1_train_fold_0.csv",
+    "cache_dir": "../cache_dir",
+    "log_dir": "../runs",
+    "log_filename": null,
+    "persistent_dataset": false,
+    
+    "pretrained_model": false,
+    "pretrained_model_file": "/gpfswork/rech/geh/uzq69ur/phd-first-centralized-trainings/runs/Train_Local_1_3D_multi_gpu.py/2023-04-14_14-16-05/best_local_model.pth",
+    
+    "save_epochs": [100, 200],
+
+    "prop_full_dataset": 1.0,
+    "ratio_train": 0.8,
+    
+    "max_epochs": 300,
+    "nb_gpus": 1,
+    "batch_size_per_gpu": 4,
+    
+    "filters": [32, 64, 128, 256, 512],
+    "strides": [1, 2, 2, 2, 2],
+    "kernel_sizes": [3, 3, 3, 3, 3],
+    
+    "optim":"sgd",
+    "learning_rate": 0.1,
+    "weight_decay": 1e-5,
+    
+    "lr_scheduler": "exp_decay",
+    "patience": 30,
+    "lr_factor": 0.5,
+    "min_lr": 5e-3,
+    "gamma": 0.995,
+    "dropout": 0,
+    
+    "norm": "INSTANCE",
+    "learn_affine_norm": false,
+    
+    "data_augmentation": true,
+    
+    "validation_interval": 1,
+    "print_validation_interval": 99,
+    
+    "roi_size": [128, 128, 128],
+    "sliding_window_overlap": 0.5
+}
