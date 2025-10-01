@@ -2,13 +2,17 @@
     "device": "cuda:0",
     "tranform_device": "cuda:0",
     
-    "data_dir": "../datasets/MICCAI_FeTS2022_TrainingData",
-    "partition_file": "../datasets/MICCAI_FeTS2022_TrainingData/partitioning_1_folds/partitioning_1_train_fold_0.csv",
-    "cache_dir": "../cache_dir",
+    "data_dir": "/gpfswork/rech/geh/uzq69ur/phd-first-centralized-trainings/datasets/MICCAI_FeTS2022_TrainingData",
+    "partition_file": "/gpfswork/rech/geh/uzq69ur/phd-first-centralized-trainings/datasets/MICCAI_FeTS2022_TrainingData/partitioning_1_folds/partitioning_1_train_fold_#.csv",
+    "cache_dir": "/gpfswork/rech/geh/uzq69ur/phd-first-centralized-trainings/cache_dir",
+
     "log_dir": "../runs",
-    "log_filename": null,
+    "log_filename": "grid_test",
     "persistent_dataset": false,
     
+    "pretrained_model": false,
+    "pretrained_model_file": "...",
+
     "save_comms": [30, 50, 100, 200],
     
     "prop_full_dataset": 1.0,
@@ -18,26 +22,27 @@
     "max_local_epochs": 1,    
     "nb_gpus": 2,
     "batch_size_per_gpu": 2,
-    
+
     "filters": [32, 64, 128, 256, 512],
     "strides": [1, 2, 2, 2, 2],
     "kernel_sizes": [3, 3, 3, 3, 3],
     
     "optim":"sgd",
-    "learning_rate": 0.1,
+    "learning_rate": 0.4,
+    "momentum": 0.9,
     "weight_decay": 1e-5,
-    "momentum_restart": true,
     
+    "alpha_agg": 0.45,
+    "beta_agg": 0.45,
+    "gamma_agg": 0.1,
+    "local_loss": "val",
+    "positive_difference": true,
+
     "lr_scheduler": "exp_decay",
     "patience": 30,
     "lr_factor": 0.5,
     "min_lr": 5e-3,
     "gamma": 0.995,
-    
-    "nb_local_blocks": 8,
-    "nb_local_blocks_first": 4,
-    "nb_local_blocks_last": 6,
-    "starting_block": "first_and_last",
     
     "norm": "INSTANCE",
     "learn_affine_norm": false,
@@ -53,3 +58,4 @@
     "roi_size": [128, 128, 128],
     "sliding_window_overlap": 0.5
 }
+

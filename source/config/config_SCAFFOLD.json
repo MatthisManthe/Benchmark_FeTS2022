@@ -1,0 +1,57 @@
+{
+    "device": "cuda:0",
+    "tranform_device": "cuda:0",
+    
+    "data_dir": "/gpfswork/rech/geh/uzq69ur/phd-first-centralized-trainings/datasets/MICCAI_FeTS2022_TrainingData",
+    "partition_file": "/gpfswork/rech/geh/uzq69ur/phd-first-centralized-trainings/datasets/MICCAI_FeTS2022_TrainingData/partitioning_1_folds/partitioning_1_train_fold_#.csv",
+    "cache_dir": "/gpfswork/rech/geh/uzq69ur/phd-first-centralized-trainings/cache_dir",
+
+    "log_dir": "../runs",
+    "log_filename": "grid_test",
+    "persistent_dataset": false,
+    
+    "save_comms": [30, 50, 100, 200],
+    
+    "prop_full_dataset": 1.0,
+    "ratio_train": 0.8,
+    
+    "max_comm_rounds": 300,
+    "max_local_epochs": 1,    
+    "nb_gpus": 2,
+    "batch_size_per_gpu": 2,
+    
+    "filters": [32, 64, 128, 256, 512],
+    "strides": [1, 2, 2, 2, 2],
+    "kernel_sizes": [3, 3, 3, 3, 3],
+    
+    "optim":"sgd",
+    "learning_rate": 0.4,
+    "weight_decay": 1e-5,
+    "momentum_restart": true,
+    
+    "lr_scheduler": "exp_decay",
+    "patience": 30,
+    "lr_factor": 0.5,
+    "min_lr": 5e-3,
+    "gamma": 0.995,
+    
+    "prox": false,
+    "mu": 0.1,
+    
+    "norm": "INSTANCE",
+    "learn_affine_norm": false,
+
+    "weighted_control_variate": true,
+    
+    "data_augmentation": true,
+    
+    "global_validation_interval": 1,
+    "local_validation_interval": 1,
+    
+    "global_print_validation_interval": 20,
+    "local_print_validation_interval": 200,
+    
+    "roi_size": [128, 128, 128],
+    "sliding_window_overlap": 0.5
+}
+
