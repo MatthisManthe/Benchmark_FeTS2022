@@ -25,12 +25,12 @@ One needs to create a ```/runs``` directory for experiment folders to be created
 
 ## Dependencies
 The main frameworks used are essentially 
-- Pytorch
-- Numpy
-- Sklearn
-- Monai
+- Python (3.8.12)
+- Pytorch (1.10.0)
+- Sklearn (1.0.2)
+- Monai (0.9.1)
 
-with additional dependencies with tqdm, glob, pandas, pickle and pacmap.
+with additional dependencies with numpy, tqdm, glob, pandas, pickle, nibabel and pacmap.
 
 ## Multi-GPU implementation
 Note that all of these implementations can utilize multi-GPU nodes. As we used a 3D-UNet without problematic layers from a distributed computation point of view (such as batch norm), and model copy operations being negligible in cost compared to forward passes in our case, we leveraged the simple ```torch.nn.DataParallel``` module to achieve GPU parallelization of batches.
